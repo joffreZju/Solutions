@@ -12,6 +12,9 @@ public class ListNode {
     }
 
     public static ListNode parse(int[] nums) {
+        if (nums.length == 0) {
+            return null;
+        }
         ListNode root = new ListNode(nums[0]);
         ListNode currentNode = root;
         for (int i = 1; i < nums.length; i++) {
@@ -29,5 +32,6 @@ public class ListNode {
             if (head != null)
                 System.out.print("->");
         }
+        System.out.println();
     }
 }
