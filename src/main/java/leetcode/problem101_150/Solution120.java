@@ -1,4 +1,4 @@
-package leetcode.problem051_100;
+package leetcode.problem101_150;
 
 import java.util.Arrays;
 import java.util.List;
