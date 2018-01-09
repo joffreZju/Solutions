@@ -6,6 +6,7 @@ import java.util.*;
  * 347. Top K Frequent Elements
  */
 public class Solution347 {
+    // O(NLogN)
     public static List<Integer> topKFrequent(int[] nums, int k) {
         List<Integer> res = new ArrayList<>();
         PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
@@ -16,6 +17,7 @@ public class Solution347 {
         return res;
     }
 
+    // O(N)
     public static List<Integer> topKFrequentAgain(int[] nums, int k) {
         Map<Integer, Integer> hashMap = new HashMap<>();
         for (int num : nums) hashMap.put(num, hashMap.getOrDefault(num, 0) + 1);
