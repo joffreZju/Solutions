@@ -11,7 +11,7 @@ public class Trie {
         Map<Character, TrieNode> children;
         boolean isLeaf;
         int freq;           //该字串的重复数目,频数
-        int prefix_num;     //以该子串为前缀的单词数
+        int prefixNum;     //以该子串为前缀的单词数
 
         TrieNode() {
             this.children = new HashMap<>();
@@ -86,6 +86,6 @@ public class Trie {
  * Your Trie object will be instantiated and called as such:
  * Trie obj = new Trie();
  * obj.insert(word);
- * boolean param_2 = obj.search(word);
+ * boolean param_2 = obj.partMatch(word);
  * boolean param_3 = obj.startsWith(prefix);
  */

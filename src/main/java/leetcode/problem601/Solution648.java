@@ -10,7 +10,7 @@ public class Solution648 {
         Map<Character, TrieNode> children;
         boolean isLeaf;
         int freq;           //该字串的重复数目,频数
-        int prefix_num;     //以该子串为前缀的单词数
+        int prefixNum;     //以该子串为前缀的单词数
 
         TrieNode() {
             this.children = new HashMap<>();
