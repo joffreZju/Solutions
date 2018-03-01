@@ -12,31 +12,23 @@ import java.util.Map;
  */
 public class Solution652 {
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-        map = new HashMap<>();
-        preOrder(root);
+        Map<String, List<TreeNode>> map = new HashMap<>();
+        serialize(root, map);
 
-        for (Map.Entry<Integer, List<TreeNode>> entry : map.entrySet()) {
-            if (entry.getValue().size() < 2) continue;
-
+        List<TreeNode> res = new ArrayList<>();
+        for (List<TreeNode> value : map.values()) {
+            if (value.size() > 1) {
+                res.add(value.get(0));
+            }
         }
+        return res;
     }
 
-
-    private static Map<Integer, List<TreeNode>> map;
-
-    private static void preOrder(TreeNode root) {
-        if (root == null) return;
-        if (!map.containsKey(root.val)) map.put(root.val, new ArrayList<>());
-        map.get(root.val).add(root);
-
-        preOrder(root.left);
-        preOrder(root.right);
-    }
-
-    public static boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null && q == null) return true;
-        else if (p == null || q == null) return false;
-        else if (p.val != q.val) return false;
-        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    private static String serialize(TreeNode root, Map<String, List<TreeNode>> map) {
+        if (root == null) return "";
+        String serial = "(" + serialize(root.left, map) + root.val + serialize(root.right, map) + ")";
+        if (!map.containsKey(serial)) map.put(serial, new ArrayList<>());
+        map.get(serial).add(root);
+        return serial;
     }
 }
