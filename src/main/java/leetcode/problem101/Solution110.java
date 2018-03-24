@@ -82,7 +82,7 @@ public class Solution110 {
     // }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, null, null, 5, 5});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, null, null, 5, 5});
         System.out.println(isBalanced(root));
     }
 }

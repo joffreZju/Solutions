@@ -38,7 +38,7 @@ public class Solution103 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{3, 9, 20, null, null, 15, 7});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{3, 9, 20, null, null, 15, 7});
         System.out.println(zigzagLevelOrder(root));
     }
 }

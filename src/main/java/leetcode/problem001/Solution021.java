@@ -8,30 +8,58 @@ import leetcode.util.ListNode;
  */
 
 public class Solution021 {
+    // Solution1
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if (l1 == null) return l2;
-        if (l2 == null) return l1;
-        ListNode cur1, cur2, head;
-        if (l1.val < l2.val) {
-            cur1 = l1;
-            cur2 = l2;
-            head = l1;
-        } else {
-            cur1 = l2;
-            cur2 = l1;
-            head = l2;
-        }
-        while (cur2 != null) {
-            while (cur1.next != null && cur2.val > cur1.next.val) {
-                cur1 = cur1.next;
+        ListNode head = new ListNode(0), cur = head;
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                cur.next = l1;
+                l1 = l1.next;
+            } else {
+                cur.next = l2;
+                l2 = l2.next;
             }
-            ListNode tmp1 = cur1.next, tmp2 = cur2.next;
-            cur1.next = cur2;
-            cur1.next.next = tmp1;
-            cur2 = tmp2;
+            cur = cur.next;
         }
-        return head;
+        if (l1 != null) cur.next = l1;
+        else if (l2 != null) cur.next = l2;
+        return head.next;
     }
+
+    // Solution3 递归
+    // public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    //     if (l1 == null) return l2;
+    //     else if (l2 == null) return l1;
+    //     else if (l1.val <= l2.val) {
+    //         l1.next = mergeTwoLists(l1.next, l2);
+    //         return l1;
+    //     } else if (l1.val > l2.val) {
+    //         l2.next = mergeTwoLists(l1, l2.next);
+    //         return l2;
+    //     }
+    //     return null;
+    // }
+
+    // Solution2
+    // public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    //     if (l1 == null) return l2;
+    //     else if (l2 == null) return l1;
+    //     else if (l1.val > l2.val) return mergeTwoLists(l2, l1);
+    //     ListNode aa = l1, bb = l2;
+    //     while (bb != null) {
+    //         if (aa.next == null) {
+    //             aa.next = bb;
+    //             break;
+    //         } else if (bb.val <= aa.next.val) {
+    //             ListNode tmp = aa.next;
+    //             aa.next = bb;
+    //             bb = bb.next;
+    //             aa.next.next = tmp;
+    //         }
+    //         aa = aa.next;
+    //     }
+    //     return l1;
+    // }
 
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);

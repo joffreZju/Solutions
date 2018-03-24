@@ -1,6 +1,5 @@
 package leetcode.problem101;
 
-import jdk.nashorn.internal.objects.NativeUint8Array;
 import leetcode.util.TreeNode;
 
 import java.util.Stack;
@@ -44,11 +43,11 @@ public class Solution112 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{5, 4, 8, 11, null, 13, 4});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{5, 4, 8, 11, null, 13, 4});
         System.out.println(hasPathSum(root, 9));
         System.out.println(hasPathSum(root, 20));
 
-        root = TreeNode.generateTreeFromLevelOrder(new Integer[]{-2, null, -3});
+        root = TreeNode.deserializeTree(new Integer[]{-2, null, -3});
         System.out.println(hasPathSum(root, -5));
         System.out.println(hasPathSum(root, -3));
     }

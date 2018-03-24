@@ -21,7 +21,7 @@ public class Solution572 {
     }
 
     public static void main(String[] args) {
-        TreeNode s = TreeNode.generateTreeFromLevelOrder(new Integer[]{1, 1}), t = new TreeNode(1);
+        TreeNode s = TreeNode.deserializeTree(new Integer[]{1, 1}), t = new TreeNode(1);
         System.out.println(isSubtree(s, t));
     }
 }

@@ -3,7 +3,6 @@ package leetcode.problem201;
 import leetcode.util.TreeNode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -32,7 +31,7 @@ public class Solution257 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{1, 2, 3, 4, 5, 6});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{1, 2, 3, 4, 5, 6});
         System.out.println(binaryTreePaths(root));
     }
 }

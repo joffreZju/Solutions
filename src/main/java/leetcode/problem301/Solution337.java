@@ -2,9 +2,6 @@ package leetcode.problem301;
 
 import leetcode.util.TreeNode;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * 337. House Robber III
  */
@@ -108,8 +105,8 @@ public class Solution337 {
     // }
 
     public static void main(String[] args) {
-        TreeNode root1 = TreeNode.generateTreeFromLevelOrder(new Integer[]{3, 2, 3, null, 3, null, 1});
-        TreeNode root2 = TreeNode.generateTreeFromLevelOrder(new Integer[]{3, 4, 5, 1, 3, null, 1});
+        TreeNode root1 = TreeNode.deserializeTree(new Integer[]{3, 2, 3, null, 3, null, 1});
+        TreeNode root2 = TreeNode.deserializeTree(new Integer[]{3, 4, 5, 1, 3, null, 1});
         TreeNode root3 = new TreeNode(4);
         root3.left = new TreeNode(1);
         root3.left.left = new TreeNode(2);

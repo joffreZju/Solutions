@@ -56,7 +56,7 @@ public class Codec {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{5, 3, 6, 2, 4, null, 7});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{5, 3, 6, 2, 4, null, 7});
         Codec codec = new Codec();
         System.out.println(codec.serialize(root));
 

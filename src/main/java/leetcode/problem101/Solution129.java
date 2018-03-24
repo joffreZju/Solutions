@@ -53,7 +53,7 @@ public class Solution129 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{1, 2, 3});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{1, 2, 3});
         System.out.println(sumNumbers(root));
     }
 }

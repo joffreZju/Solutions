@@ -1,7 +1,6 @@
 package leetcode.util;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import leetcode.problem201.Codec;
 
 public class TreeNode {
     public int val;
@@ -12,35 +11,23 @@ public class TreeNode {
         val = x;
     }
 
-    // todo 有bug
-    public static TreeNode generateTreeFromLevelOrder(Integer[] numbers) {
-        int i = 0;
-        Queue<TreeNode> curLevel = new LinkedList<>();
-        TreeNode root = new TreeNode(numbers[i++]);
-        curLevel.offer(root);
-        while (!curLevel.isEmpty() && i < numbers.length) {
-            TreeNode cur = curLevel.poll();
+    // 1,2,3,n,4,5,n,6,n,n,7
+    public static TreeNode deserializeTree(String data) {
+        return Codec.deserialize(data);
+    }
 
-            if (numbers[i] == null) cur.left = null;
-            else cur.left = new TreeNode(numbers[i]);
-            i++;
-
-            if (i >= numbers.length) break;
-
-            if (numbers[i] == null) cur.right = null;
-            else cur.right = new TreeNode(numbers[i]);
-            i++;
-
-            curLevel.offer(cur.left);
-            curLevel.offer(cur.right);
+    public static TreeNode deserializeTree(Integer[] numbers) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < numbers.length; i++) {
+            if (i != 0) sb.append(',');
+            if (numbers[i] != null) sb.append(numbers[i]);
+            else sb.append('n');
         }
-        return root;
+        return Codec.deserialize(sb.toString());
     }
 
     public static void main(String[] args) {
-        TreeNode root = generateTreeFromLevelOrder(new Integer[]{1, 2, 3, null, 4, null, 5});
-        System.out.println(root.val);
-        System.out.println(root.left.val + "-" + root.right.val);
-        System.out.println(root.left.left + "-" + root.left.right.val + "***" + root.right.left + "-" + root.right.right.val);
+        TreeNode root = deserializeTree(new Integer[]{1, 2, 3, null, 4, 5, null, 6, null, null, 7});
+        System.out.println(Codec.serialize(root));
     }
 }

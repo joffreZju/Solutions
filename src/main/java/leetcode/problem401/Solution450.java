@@ -24,7 +24,7 @@ public class Solution450 {
 
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{5, 3, 6, 2, 4, null, 7});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{5, 3, 6, 2, 4, null, 7});
         System.out.println(deleteNode(root, 5).val);
     }
 }

@@ -47,10 +47,10 @@ public class Solution437 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{10, 5, -3, 3, 2, null, 11, 3, -2, null, 1});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{10, 5, -3, 3, 2, null, 11, 3, -2, null, 1});
         System.out.println(pathSum(root, 8));
 
-        root = TreeNode.generateTreeFromLevelOrder(new Integer[]{0, 1, 1});
+        root = TreeNode.deserializeTree(new Integer[]{0, 1, 1});
         System.out.println(pathSum(root, 1));
     }
 }

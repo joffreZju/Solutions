@@ -26,10 +26,10 @@ public class Solution687 {
     }
 
     public static void main(String[] args) {
-//        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{1, 4, 5, 4, 4, null, 5});
-//        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{5, 4, 5, 1, 1, null, 5});
-//        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{5, 4, 5, 1, 1, 5});
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{1, 1});
+//        TreeNode root = TreeNode.deserializeTree(new Integer[]{1, 4, 5, 4, 4, null, 5});
+//        TreeNode root = TreeNode.deserializeTree(new Integer[]{5, 4, 5, 1, 1, null, 5});
+//        TreeNode root = TreeNode.deserializeTree(new Integer[]{5, 4, 5, 1, 1, 5});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{1, 1});
         System.out.println(longestUnivaluePath(root));
     }
 }

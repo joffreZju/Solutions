@@ -17,7 +17,7 @@ public class Solution111 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{1, 2, 3, 4, null, null});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{1, 2, 3, 4, null, null});
         System.out.println(minDepth(root));
     }
 }

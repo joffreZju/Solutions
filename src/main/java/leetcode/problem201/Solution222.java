@@ -27,7 +27,7 @@ public class Solution222 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
         System.out.println(countNodes(root));
         System.out.println(heightOf(root));
     }

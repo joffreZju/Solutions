@@ -26,7 +26,7 @@ public class Solution230 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.generateTreeFromLevelOrder(new Integer[]{7, 5, 9, 3, 6, 8, 10, null, 4});
+        TreeNode root = TreeNode.deserializeTree(new Integer[]{7, 5, 9, 3, 6, 8, 10, null, 4});
         System.out.println(kthSmallest(root, 1));
         System.out.println(kthSmallest(root, 2));
         System.out.println(kthSmallest(root, 3));
