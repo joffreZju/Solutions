@@ -1,9 +1,8 @@
 package basicJava;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentSkipListMap;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class StringIntern {
     // 测试 String.intern()的使用
@@ -58,6 +57,24 @@ public class StringIntern {
         new ConcurrentHashMap<>().put(null, null);
         new CopyOnWriteArrayList<>();
         new ConcurrentSkipListMap<>();
+
+        new PriorityQueue<>();
+        new LinkedBlockingQueue<>();
+        new ThreadLocal<>();
+        new ReentrantLock();
+
+        new StringBuffer();
+        new StringBuilder();
+
+        Executors.newCachedThreadPool();
+        Executors.newFixedThreadPool(2);
+        Executors.newScheduledThreadPool(2);
+        Executors.newSingleThreadExecutor();
+        Executors.newSingleThreadScheduledExecutor();
+
+        new CountDownLatch(2);
+        new CyclicBarrier(2);
+        new Phaser(2);
 
     }
 
