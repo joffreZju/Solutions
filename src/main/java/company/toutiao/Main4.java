@@ -1,4 +1,4 @@
-package toutiao;
+package company.toutiao;
 
 import java.util.PriorityQueue;
 import java.util.Scanner;
