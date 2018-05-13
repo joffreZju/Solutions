@@ -7,7 +7,8 @@ public class Main {
 	private static class Node {
 		int time, level;
 	}
-	
+	// TODO 题目出来跑一下
+	// 多个机器完成多个任务
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt(), m = in.nextInt();

@@ -5,12 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main2 {
-	
-	
 	static class Rect {
 		int startX, startY, endX, endY;
 		int count = 0;
-		
+
 		public Rect(int startX, int startY, int endX, int endY, int count) {
 			this.startX = startX;
 			this.startY = startY;
@@ -18,7 +16,7 @@ public class Main2 {
 			this.endY = endY;
 			this.count = count;
 		}
-		
+
 		public Rect getOverlap(Rect rect) {
 			int nStartX = Math.max(startX, rect.startX), nEndX = Math.min(endX, rect.endX);
 			int nStartY = Math.max(startY, rect.startY), nEndY = Math.min(endY, rect.endY);
@@ -28,10 +26,16 @@ public class Main2 {
 				return new Rect(nStartX, nStartY, nEndX, nEndY, 0);
 		}
 	}
-	
+	// 矩形重叠
+	// 暴力：90%
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
+		// Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner("2\n" +
+				"0 100\n" +
+				"0 100\n" +
+				"100 200\n" +
+				"100 200\n");//这个用例没有过
+
 		int n = sc.nextInt();
 		int[][] rec = new int[n][4];
 		List<Rect> rectA = new ArrayList<>(), rectB = new ArrayList<>();
@@ -40,11 +44,11 @@ public class Main2 {
 				rec[j][i] = sc.nextInt();
 			}
 		}
-		
+
 		for (int i = 0; i < n; i++) {
 			rectA.add(new Rect(rec[i][0], rec[i][1], rec[i][2], rec[i][3], 0));
 		}
-		// startx, startY, endX, endY
+
 		int max = 0;
 		for (int i = 0; i < n; i++) {
 			Rect cur = rectA.get(i);
@@ -67,8 +71,5 @@ public class Main2 {
 			}
 		}
 		System.out.println(max);
-		
 	}
-	
-	
 }

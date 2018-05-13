@@ -15,7 +15,8 @@ public class Main3 {
 			}
 		}
 	}
-	
+    //左右括号匹配，可以交换一次
+	//solution1
 	static boolean valid(char[] chars) {
 		int openCount = 0, firstRight = -1, lastLeft = -1;
 		for (int i = 0; i < chars.length; i++) {
@@ -42,7 +43,8 @@ public class Main3 {
 		}
 		return true;
 	}
-	
+
+	// solution2
 	static boolean canSwap(char[] chars) {
 		int openCount = 0;
 		int lastOpenIndex = -1;

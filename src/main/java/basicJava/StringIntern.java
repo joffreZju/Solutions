@@ -2,6 +2,8 @@ package basicJava;
 
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicIntegerArray;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class StringIntern {
@@ -42,8 +44,9 @@ public class StringIntern {
         new EnumMap<Day, Integer>(Day.class);
         new HashSet<>();
         new TreeSet<>();
-
-        new Thread();
+        new PriorityQueue<>();
+        new StringBuffer();
+        new StringBuilder();
 
         Collections.synchronizedCollection(null);
         Collections.synchronizedList(null);
@@ -54,17 +57,13 @@ public class StringIntern {
         Collections.synchronizedNavigableMap(null);
         Collections.synchronizedNavigableSet(null);
 
+        new Thread();
+
         new ConcurrentHashMap<>().put(null, null);
         new CopyOnWriteArrayList<>();
         new ConcurrentSkipListMap<>();
-
-        new PriorityQueue<>();
-        new LinkedBlockingQueue<>();
-        new ThreadLocal<>();
-        new ReentrantLock();
-
-        new StringBuffer();
-        new StringBuilder();
+        new AtomicInteger(1);
+        new AtomicIntegerArray(new int[]{1, 2, 3});
 
         Executors.newCachedThreadPool();
         Executors.newFixedThreadPool(2);
@@ -72,6 +71,9 @@ public class StringIntern {
         Executors.newSingleThreadExecutor();
         Executors.newSingleThreadScheduledExecutor();
 
+        new LinkedBlockingQueue<>();
+        new ThreadLocal<>();
+        new ReentrantLock().tryLock();
         new CountDownLatch(2);
         new CyclicBarrier(2);
         new Phaser(2);

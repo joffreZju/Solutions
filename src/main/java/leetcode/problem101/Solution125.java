@@ -1,4 +1,4 @@
-package leetcode.problem001;
+package leetcode.problem101;
 
 /**
  * 125. Valid Palindrome

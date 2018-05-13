@@ -99,7 +99,7 @@ public class Sort {
 
     // 归并
     private static void merge(int[] nums, int low, int mid, int high) {
-        int[] tab = new int[nums.length]; // 存储数组可以使用全局变量
+        int[] tab = new int[nums.length]; // 存储数组应该使用全局变量
         System.arraycopy(nums, low, tab, low, high - low + 1);
         // for (int i = low; i <= high; i++) tab[i] = nums[i];
 
