@@ -4,20 +4,20 @@ import java.util.*;
 
 public class Main_1077 {
     //线段树，超时
-    private static class Node {
+    private static class SegNode {
         int left, right, mid, minW;
 
-        public Node(int left, int right) {
+        public SegNode(int left, int right) {
             this.left = left;
             this.right = right;
             this.mid = left + (right - left) / 2;
         }
     }
 
-    private static Node[] tree;
+    private static SegNode[] tree;
 
     private static int build(int root, int left, int right, int[] weights) {
-        tree[root] = new Node(left, right);
+        tree[root] = new SegNode(left, right);
         if (left == right) {
             tree[root].minW = weights[left];
             return tree[root].minW;
@@ -75,7 +75,7 @@ public class Main_1077 {
         for (int i = 1; i <= n; i++) {
             weight[i] = in.nextInt();
         }
-        tree = new Node[3 * (n + 1)];
+        tree = new SegNode[3 * (n + 1)];
         build(1, 1, n, weight);
 
         int q = in.nextInt(), op[] = new int[3];
