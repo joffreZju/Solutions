@@ -22,6 +22,7 @@ public class Solution493 {
         return sum;
     }
 
+    // 树状数组
     public int reversePairs(int[] nums) {
         int len = nums.length;
         long sorted[] = new long[len];

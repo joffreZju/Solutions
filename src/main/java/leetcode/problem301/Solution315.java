@@ -53,6 +53,7 @@ public class Solution315 {
     //     return res;
     // }
 
+    // 树状数组
     public List<Integer> countSmaller(int[] nums) {
         int len = nums.length, min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
         for (int i : nums) {
