@@ -1,6 +1,6 @@
 package leetcode.util;
 
-import leetcode.problem201.Codec;
+import leetcode.round_1.problem201.Codec;
 
 public class TreeNode {
     public int val;
