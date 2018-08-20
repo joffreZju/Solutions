@@ -8,22 +8,17 @@ import leetcode.util.ListNode;
  */
 public class Solution024 {
     public static ListNode swapPairs(ListNode head) {
-        ListNode cur = head, next, pre = null;
-        while (cur != null && cur.next != null) {
-            if (cur == head) {
-                head = cur.next;
-            }
-            next = cur.next;
-            cur.next = next.next;
-            next.next = cur;
-            if (pre != null) {
-                pre.next = next;
-            }
+        ListNode fake = new ListNode(-1), pre = fake;
+        fake.next = head;
+        while (pre.next != null && pre.next.next != null) {
+            ListNode l1 = pre.next, l2 = pre.next.next;
+            l1.next = l2.next;
+            l2.next = l1;
+            pre.next = l2;
 
-            pre = cur;
-            cur = cur.next;
+            pre = l1;
         }
-        return head;
+        return fake.next;
     }
 
     public static void main(String[] args) {

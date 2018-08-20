@@ -74,6 +74,7 @@ public class StringIntern {
         new LinkedBlockingQueue<>();
         new ThreadLocal<>();
         new ReentrantLock().tryLock();
+        new Semaphore(1);
         new CountDownLatch(2);
         new CyclicBarrier(2);
         new Phaser(2);
