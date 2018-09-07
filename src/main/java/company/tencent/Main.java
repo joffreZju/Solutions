@@ -7,8 +7,8 @@ public class Main {
 	private static class Node {
 		int time, level;
 	}
-	// TODO 题目出来跑一下
-	// 多个机器完成多个任务
+	// https://www.nowcoder.com/question/next?pid=10611931&qid=161634&tid=18036352
+	// 多个机器完成多个任务，AC
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt(), m = in.nextInt();
@@ -46,7 +46,7 @@ public class Main {
 			}
 			for (int k = tasks[i].level; k <= 100; k++) {
 				if (level[k] > 0) {
-					profit += tasks[i].time * 500 + tasks[i].level * 2;
+					profit += tasks[i].time * 200 + tasks[i].level * 3;
 					level[k]--;
 					count++;
 					break;

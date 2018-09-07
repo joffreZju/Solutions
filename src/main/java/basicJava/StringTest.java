@@ -44,7 +44,7 @@ public class StringTest {
 
     private static void testCharSet() throws Exception {
         // 默认utf-8，中文三字节，英文一字节；
-        // gbk 中文两字接
+        // gbk 中文两字节，英文一字节
         String charset = "gbk";
         // String charset = "utf-8";
 

@@ -5,7 +5,10 @@ import leetcode.util.ListNode;
 import java.util.Arrays;
 
 public class Sort {
-    // 快排
+    /** 快排
+     * 当快排有很多重复元素时，可以使用三向切分，左边小于pivot，中间等于pivot，右边大于pivot
+     * 返回 pos 时，带上 pivot 的左边界和边界，这样中间等于pivot的一段就不需要处理了。
+     */
     public static void quickSort(int[] nums, int low, int high) {
         if (low >= high) return;
         int pos = partition(nums, low, high);
@@ -73,7 +76,7 @@ public class Sort {
 
     private static void adjustDown(int[] nums, int k, int end) {
         for (int i = k * 2 + 1; i <= end; i = i * 2 + 1) {
-            // 左右子节点选一个较小的
+            // 左右子节点选一个较大的，和父节点交换
             if (i + 1 <= end && nums[i] < nums[i + 1]) i++;
 
             if (nums[k] < nums[i]) {
