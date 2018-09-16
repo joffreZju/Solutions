@@ -6,15 +6,14 @@ package leetcode.round_1.problem301;
  * http://www.cnblogs.com/zichi/p/4806998.html
  */
 public class NumArrayMutable {
-    private int lowBit(int i) {
-        return i & (-i);
+    private int lowBit(int index) {
+        return index & (-index);
     }
 
     private int sum(int n) {
         int res = 0;
-        while (n >= 1) {
-            res += tree[n];
-            n -= lowBit(n);
+        for (int i = n; i >= 1; i -= lowBit(i)) {
+            res += tree[i];
         }
         return res;
     }
@@ -25,20 +24,14 @@ public class NumArrayMutable {
         len = nums.length;
         tree = new int[len + 1];
         for (int i = 0; i < len; i++) {
-            int index = i + 1;
-            while (index <= len) {
-                tree[index] += nums[i];
-                index = index + lowBit(index);
-            }
+            update(i, nums[i]);
         }
     }
 
-    public void update(int i, int val) {
-        val = val - (sum(i + 1) - sum(i));
-        int index = i + 1;
-        while (index <= len) {
-            tree[index] += val;
-            index += lowBit(index);
+    public void update(int index, int val) {
+        val = val - (sum(index + 1) - sum(index));
+        for (int i = index + 1; i <= len; i += lowBit(i)) {
+            tree[i] += val;
         }
     }
 

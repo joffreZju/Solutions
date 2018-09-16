@@ -17,7 +17,12 @@ public class DataStructureOfJDK {
         new Stack<>();
         new LinkedList<>();
         new HashMap<>().put(null, null);
-        new LinkedHashMap<>();
+        LinkedHashMap<Integer, Integer> lru = new LinkedHashMap<Integer, Integer>(16, 0.75f, true) {
+            @Override
+            protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
+                return super.removeEldestEntry(eldest);
+            }
+        };
         new TreeMap<>();
         new EnumMap<Day, Integer>(Day.class);
         new HashSet<>();
