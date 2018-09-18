@@ -54,6 +54,7 @@ public class TestException {
         } finally {
             System.out.println("testEx2, finally; return value=" + ret);
             return ret;
+            // 主要坑点在这里，在finally return之后，调用者认为是正常执行并不能捕获到catch里面的throw e
         }
     }
 

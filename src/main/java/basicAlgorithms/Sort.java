@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Sort {
     /** 快排
      * 当快排有很多重复元素时，可以使用三向切分，左边小于pivot，中间等于pivot，右边大于pivot
-     * 返回 pos 时，带上 pivot 的左边界和边界，这样中间等于pivot的一段就不需要处理了。
+     * 返回 pos 时，带上 pivot 的左边界和右边界，这样中间等于pivot的一段就不需要处理了。
      */
     public static void quickSort(int[] nums, int low, int high) {
         if (low >= high) return;
